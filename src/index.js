@@ -43,7 +43,7 @@ export const load = data => {
     console.log('sfdf');
   }
 };
-onBtnClick = () => {
+const onBtnClick = () => {
   page++;
   console.log(inputValue);
   getPhoto(inputValue, perPage, page);

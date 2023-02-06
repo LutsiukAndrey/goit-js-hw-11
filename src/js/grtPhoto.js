@@ -11,8 +11,5 @@ export async function getPhoto(search, perPage, page) {
     const response = await axios.get(url);
 
     load(response.data);
-    console.log(response.data);
-  } catch (error) {
-    console.error(error);
-  }
+  } catch (error) {}
 }

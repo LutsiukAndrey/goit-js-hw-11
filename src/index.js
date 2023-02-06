@@ -5,7 +5,6 @@ import { getPhoto } from './js/grtPhoto';
 
 const { form, gallery, showMoreBtn } = refs;
 
-let photo = null;
 const perPage = 40;
 let page = 1;
 let inputValue = '';
@@ -29,10 +28,10 @@ export const load = data => {
     Notify.success(`наайденно ${total} фото`);
     renderContent(data);
     maxPage = Math.ceil(total / perPage);
-    console.log(maxPage);
   }
   if (total === 0) {
     Notify.failure('ничего не наайдено!');
+    clear();
   }
 
   if (total > perPage) {
@@ -40,7 +39,6 @@ export const load = data => {
   }
   if (maxPage === page) {
     showMoreBtn.classList.add('is-hidden');
-    console.log('sfdf');
   }
 };
 const onBtnClick = () => {
@@ -51,4 +49,3 @@ const onBtnClick = () => {
 showMoreBtn.addEventListener('click', onBtnClick);
 
 form.addEventListener('submit', onSubmit.bind(this));
-console.log('fsdf');

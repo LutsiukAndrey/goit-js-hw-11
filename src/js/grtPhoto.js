@@ -6,7 +6,7 @@ const serchParams = {
 };
 
 export async function getPhoto(search, perPage, page) {
-  const url = `https://pixabay.com/api/?key=${serchParams.KEY}&q=yellow+${search}&image_type=photo&pretty=true&per_page=${perPage}&page=${page}&safesearch=true`;
+  const url = `https://pixabay.com/api/?key=${serchParams.KEY}&q=${search}&image_type=photo&pretty=true&per_page=${perPage}&page=${page}&safesearch=true`;
   try {
     const response = await axios.get(url);
 

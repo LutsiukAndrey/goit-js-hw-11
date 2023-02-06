@@ -6,7 +6,7 @@ import { getPhoto } from './js/grtPhoto';
 const { form, gallery, showMoreBtn } = refs;
 
 let photo = null;
-const perPage = 80;
+const perPage = 40;
 let page = 1;
 let inputValue = '';
 let maxPage = 0;

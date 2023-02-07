@@ -18,10 +18,12 @@ function onSubmit(e) {
   clear();
   const { value } = e.target.searchQuery;
   inputValue = value.toLowerCase().trim();
+  if (inputValue === '') {
+    return;
+  }
 
   getPhoto(inputValue, perPage, page);
 }
-
 export const load = data => {
   const { total } = data;
   if (total > 0) {

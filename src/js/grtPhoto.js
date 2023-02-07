@@ -13,3 +13,4 @@ export async function getPhoto(search, perPage, page) {
     load(response.data);
   } catch (error) {}
 }
+remov;

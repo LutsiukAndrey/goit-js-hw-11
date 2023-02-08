@@ -16,15 +16,15 @@ const clear = () => {
 function onSubmit(e) {
   e.preventDefault();
   clear();
-  const { value } = e.target.searchQuery;
+  const { value } = e.target.elements.searchQuery;
   inputValue = value.toLowerCase().trim();
   if (inputValue === '') {
     return;
   }
 
-  getPhoto(inputValue, perPage, page);
+  getPhoto(inputValue, perPage, page).then(load);
 }
-export const load = data => {
+const load = data => {
   const { total } = data;
   if (total > 0) {
     Notify.success(`наайденно ${total} фото`);
@@ -46,7 +46,7 @@ export const load = data => {
 const onBtnClick = () => {
   page++;
   console.log(inputValue);
-  getPhoto(inputValue, perPage, page);
+  getPhoto(inputValue, perPage, page).then(load);
 };
 showMoreBtn.addEventListener('click', onBtnClick);
 

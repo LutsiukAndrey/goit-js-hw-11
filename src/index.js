@@ -32,6 +32,7 @@ const load = data => {
     maxPage = Math.ceil(total / perPage);
   }
   if (total === 0) {
+    showMoreBtn.classList.add('is-hidden');
     Notify.failure('ничего не наайдено!');
     clear();
   }
